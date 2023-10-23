@@ -57,19 +57,20 @@ import {
         <h2>技能特长</h2>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          熟练掌握JavaScript、HTML5、CSS3等前端语言，。。。
+          熟练掌握JavaScript、HTML5、CSS3等前端语言，熟悉Javascript核心基础，掌握ES6常用语法，熟练使用JSON，Axios进行数据交互，熟悉原生BOM、DOM对象，会使用CSS3实现Flex布局，熟悉掌握Boostrap样式库。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          熟悉Vue、React等前端主流开发框架，。。。
+          熟练Vue、React等前端主流开发框架进行单页面应用开发，熟练使用Vue周边生态插件如Pinia、Vuex进行数据管理，Router进行路由切换，vite脚手架工具的配置和搭建，以及Element-plus等组件库。
+          [react部分]
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          HTTP
+          可以书写规范的代码，熟练使用ESlint+Prettier规范并美化代码以及Husky优化Git工作流。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          熟练使用Webpack
+          熟练使用Webpack对项目进行模块打包并了解其原理，以及熟练掌握Webpack的打包优化。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
@@ -77,11 +78,11 @@ import {
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          熟练使用git代码管理工具进行项目开发。
+          熟练使用git代码管理工具，可以熟练使用git代码管理工具进行项目的版本控制，便于项目开发。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          了解node.js可以
+          了解node.js，Java等后端语言，可以使用node.js简易开发增、删、改、查接口，可以使用node.js搭载服务端，应用apifox对项目进行测试。
         </p>
       </div>
 
@@ -91,7 +92,11 @@ import {
         <h2>项目经验</h2>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          123
+          [cv-blogger]
+        </p>
+        <p>
+          <el-icon class="dot"><CaretRight /></el-icon>
+          [vue-bbs]
         </p>
       </div>
 
@@ -103,7 +108,7 @@ import {
         <p>计算机科学与技术 本科</p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          GPA：3.75/5
+          GPA：3.75/5 [排名]
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
@@ -116,11 +121,7 @@ import {
 
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          2021年初次接触程序竞赛，并且踊跃报名组建队伍，2022年经过数月练习后，多次校内联赛名列前茅，校内比赛出线，获取参加省赛的机会，在2022年末也参加了ICPC网络赛，2023也参与了多次校内联赛，以及ICPC网络赛。
-        </p>
-        <p>
-          <el-icon class="dot"><CaretRight /></el-icon>
-          通过这两年的学习，我的编程能力获得了极大的进步，不仅如此ICPC是一个三人小组的比赛，在此期间，我的团队协作配合能力也得到了极大的加强。
+          大一入学一个月后接触算法竞赛，并通过校赛代表学校参加acm陕西省赛，截止目前已获得过团体设计天梯赛国家三等奖等奖项，并有多次acm经历。目前跟随指导老师进行科研项目。
         </p>
 
         <div class="horizontal-line"></div>
@@ -128,7 +129,7 @@ import {
         <h3>科研经历 2022-2023</h3>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          123
+          [待填]
         </p>
 
         <div class="horizontal-line"></div>
@@ -137,22 +138,6 @@ import {
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
           2023团体程序设计天梯赛 全国总决赛 团队三等奖
-        </p>
-        <p>
-          <el-icon class="dot"><CaretRight /></el-icon>
-          123
-        </p>
-        <p>
-          <el-icon class="dot"><CaretRight /></el-icon>
-          123
-        </p>
-        <p>
-          <el-icon class="dot"><CaretRight /></el-icon>
-          123
-        </p>
-        <p>
-          <el-icon class="dot"><CaretRight /></el-icon>
-          123
         </p>
 
         <div class="horizontal-line"></div>
@@ -199,6 +184,7 @@ import {
   display: flex;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   width: 1440px;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
