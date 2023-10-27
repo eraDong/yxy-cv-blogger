@@ -62,7 +62,8 @@ import {
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
           熟练Vue、React等前端主流开发框架进行单页面应用开发，熟练使用Vue周边生态插件如Pinia、Vuex进行数据管理，Router进行路由切换，vite脚手架工具的配置和搭建，以及Element-plus等组件库。
-          [react部分]
+          熟练掌握 React 以及相关技术栈（React / React-Native / Redux /
+          React-Router / React-Navigation / Antd Design 等）。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
@@ -92,11 +93,25 @@ import {
         <h2>项目经验</h2>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          [cv-blogger]
+          cv-blogger博客
+          <br />
+          项目介绍：项目基于vue3部署了简历静态页面。
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          [vue-bbs]
+          RPG-like论坛
+          项目介绍：该项目基于vue3+node.js+elementPlus+vite+pinia+axios+eslint+prettier实现了用户注册，版块分区，帖子发布、删除、编辑、搜索，帖子按热门度排序、推荐，论坛编年史百科等功能。
+          <br />
+          <br />
+          核心功能：
+          <br />
+
+          1.使用node.js部署服务端配合axios通过JSON格式的数据交互，实现帖子的增删改查功能。
+          <br />
+          2.利用Vue的组件功能，分模块开发，以及通过eslint规范代码格式，代码简洁易于维护。
+          <br />
+          3.使用快速排序算法对帖子的推荐程度以及观看程度进行排序回显，达到推荐帖子的效果。
+          <br />
         </p>
       </div>
 
@@ -108,7 +123,7 @@ import {
         <p>计算机科学与技术 本科</p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
-          GPA：3.75/5 [排名]
+          GPA：3.75/5
         </p>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
@@ -123,14 +138,14 @@ import {
           <el-icon class="dot"><CaretRight /></el-icon>
           大一入学一个月后接触算法竞赛，并通过校赛代表学校参加acm陕西省赛，截止目前已获得过团体设计天梯赛国家三等奖等奖项，并有多次acm经历。目前跟随指导老师进行科研项目。
         </p>
+        <!-- 
+        <div class="horizontal-line"></div> -->
 
-        <div class="horizontal-line"></div>
-
-        <h3>科研经历 2022-2023</h3>
+        <!-- <h3>科研经历 2022-2023</h3>
         <p>
           <el-icon class="dot"><CaretRight /></el-icon>
           [待填]
-        </p>
+        </p> -->
 
         <div class="horizontal-line"></div>
 
@@ -158,6 +173,9 @@ import {
       </div>
     </div>
   </div>
+  //导出内容
+  <div ref="exportPdf">我是导出内容</div>
+  <el-button type="button" @click="savePdf">导出(pdf)</el-button>
 </template>
 
 <style lang="less" scoped>
