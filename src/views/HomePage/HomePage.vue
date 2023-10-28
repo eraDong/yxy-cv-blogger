@@ -173,9 +173,6 @@ import {
       </div>
     </div>
   </div>
-  //导出内容
-  <div ref="exportPdf">我是导出内容</div>
-  <el-button type="button" @click="savePdf">导出(pdf)</el-button>
 </template>
 
 <style lang="less" scoped>
