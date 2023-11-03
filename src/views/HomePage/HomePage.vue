@@ -5,19 +5,44 @@ import {
   Clock,
   Phone,
   Management,
-  CaretRight
+  CaretRight,
+  Male,
+  Calendar,
+  Location,
+  Avatar
 } from '@element-plus/icons-vue'
 </script>
 
 <template>
   <div class="resume">
     <div class="left-column">
+      <!-- show'em-->
+
       <div class="avatar">
-        <img src="@/assets/avatar-test.jpg" alt="Your Avatar" />
+        <img src="@/assets/identity.jpg" alt="Your Avatar" />
       </div>
 
       <h1>余晓洋</h1>
       <div class="contact-info">
+        <!-- 以下均为应付考试内容 -->
+        <p>
+          <el-icon class="icon"><Male /></el-icon>:男
+        </p>
+
+        <p>
+          <el-icon class="icon"><Calendar /></el-icon>:2003/02/24
+        </p>
+
+        <p>
+          <el-icon class="icon"><Location /></el-icon>:广东云浮
+        </p>
+
+        <p>
+          <el-icon class="icon"><Avatar /></el-icon>:汉族
+        </p>
+
+        <!-- 以上均为应付考试内容 -->
+
         <p>
           <el-icon class="icon"><School /></el-icon>:陕西科技大学
         </p>
@@ -98,6 +123,10 @@ import {
           项目介绍：项目基于vue3部署了简历静态页面。
         </p>
         <p>
+          <a href="http://124.220.50.129:18333/">点击跳转至个人简历博客站</a>
+        </p>
+
+        <p>
           <el-icon class="dot"><CaretRight /></el-icon>
           RPG-like论坛
           项目介绍：该项目基于vue3+node.js+elementPlus+vite+pinia+axios+eslint+prettier实现了用户注册，版块分区，帖子发布、删除、编辑、搜索，帖子按热门度排序、推荐，论坛编年史百科等功能。
@@ -114,6 +143,25 @@ import {
           <br />
         </p>
       </div>
+
+      <div class="horizontal-line"></div>
+
+      <!-- 以下均为应付考试内容 -->
+      <div class="content">
+        <h2>求职意向</h2>
+        <p>
+          <el-icon class="dot"><CaretRight /></el-icon>职位类别 : 前端开发工程师
+        </p>
+        <p>
+          <el-icon class="dot"><CaretRight /></el-icon>期望工作地区 :
+          沿海靠近广东地区
+        </p>
+        <p>
+          <el-icon class="dot"><CaretRight /></el-icon>求职类型 :
+          希望可以得到一份全职的工作
+        </p>
+      </div>
+      <!-- 以上均为应付考试内容 -->
 
       <div class="horizontal-line"></div>
 
@@ -179,8 +227,14 @@ import {
 @primary-color: #333;
 @secondary-color: #666;
 
+@media print {
+  a {
+    pointer-events: auto;
+  }
+}
+
 .horizontal-line {
-  border-top: 1px solid #ccc; /* 选择你喜欢的颜色 */
+  border-top: 2px solid #ccc; /* 选择你喜欢的颜色 */
   margin: 20px 0; /* 控制线的间距 */
 }
 
@@ -200,16 +254,22 @@ import {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  width: 1440px;
+  width: 1080px;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .left-column {
-  flex: 1;
+  width: 175px;
+
   padding: 15px;
   margin: 50px;
+
+  .url {
+    margin: 10px;
+  }
+
   .github-logo {
     width: 16px;
     height: 16px;
@@ -219,7 +279,7 @@ import {
     img {
       width: 80px;
       height: 80px;
-      border-radius: 50%;
+      border-radius: 15px;
     }
   }
 
@@ -260,6 +320,10 @@ import {
       font-size: 14px;
       margin: 10px 0;
       margin-left: 40px;
+    }
+
+    a {
+      color: #372944;
     }
   }
 }
