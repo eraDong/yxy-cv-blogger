@@ -9,7 +9,6 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import 'hover.css'
 
-
 const app = createApp(App)
 
 app.use(pinia)

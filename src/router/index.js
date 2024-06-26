@@ -8,17 +8,17 @@ const router = createRouter({
       component: () => import('@/views/HomePage/HomePage.vue')
     },
     {
-      path:'/home',
-      redirect:'/collection',
+      path: '/home',
+      redirect: '/collection',
       component: () => import('@/views/LayoutContainer/LayoutContainer.vue'),
-      children:[
+      children: [
         {
-          path:'/collection',
-          component: () => import('@/views/CollectionPage/CollectionPage.vue'),
+          path: '/collection',
+          component: () => import('@/views/CollectionPage/CollectionPage.vue')
         },
         {
-          path:'/product',
-          component: () => import('@/views/ProductPage/ProductPage.vue'),
+          path: '/product',
+          component: () => import('@/views/ProductPage/ProductPage.vue')
         }
       ]
     }

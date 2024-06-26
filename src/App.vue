@@ -8,26 +8,26 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { ref, watchEffect } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
-const loading = ref(true);
-const router = useRouter();
-const route = useRoute();
+const loading = ref(true)
+const router = useRouter()
+const route = useRoute()
 
 const hideLoading = () => {
-  loading.value = false;
-};
+  loading.value = false
+}
 
 const showLoading = () => {
-  loading.value = true;
-};
+  loading.value = true
+}
 
 // Watch route changes and trigger loading
 watchEffect(() => {
-  showLoading();
-  setTimeout(hideLoading, 500); // Simulate loading time
-});
+  showLoading()
+  setTimeout(hideLoading, 500) // Simulate loading time
+})
 </script>
 
 <style scoped>
@@ -50,16 +50,19 @@ watchEffect(() => {
 }
 
 /* Transition styles */
-.ease-enter-active, .ease-leave-active {
+.ease-enter-active,
+.ease-leave-active {
   transition: all 0.5s ease;
 }
 
-.ease-enter-from, .ease-leave-to {
+.ease-enter-from,
+.ease-leave-to {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.ease-leave-from, .ease-enter-to {
+.ease-leave-from,
+.ease-enter-to {
   opacity: 1;
   transform: translateY(0);
 }

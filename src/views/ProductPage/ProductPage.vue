@@ -1,8 +1,6 @@
 <script setup></script>
 <template>
-    <div class="main">
-        456
-    </div>
+  <div class="main">456</div>
 </template>
 <style scoped>
 .main {
