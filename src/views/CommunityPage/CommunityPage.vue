@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div class="main">products developing</div>
+  <div class="main">community developing</div>
 </template>
 <style scoped>
 .main {

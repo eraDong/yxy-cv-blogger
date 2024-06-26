@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const showModal = ref(false)
 const modalText = ref('')
+const showSettings = ref(false)
 const fullText = 'There is no way...'
 
 const goToCollection = () => {
@@ -34,8 +35,11 @@ const typeText = () => {
     }, 100) // Adjust typing speed here
   })
 }
-</script>
 
+const toggleSettings = () => {
+  showSettings.value = !showSettings.value
+}
+</script>
 
 <template>
   <div class="main">
@@ -44,7 +48,7 @@ const typeText = () => {
         <el-row class="content" justify="start">
           <el-col :span="10" class="head">
             <p>LumineCommunity</p>
-            <p>EraDong.Soilder</p>
+            <p>EraDong.Soldier</p>
             <p>Appreciate</p>
           </el-col>
           <el-col :span="12" class="bottom">
@@ -71,8 +75,8 @@ const typeText = () => {
         <img src="@/assets/angel_wings.png" alt="" />
         <img src="@/assets/angel_wings_black.png" alt="" />
         <div class="enter">
-          <el-button type="text" @click="goToCollection()">Enter</el-button>
-          <el-button type="text">Settings</el-button>
+          <el-button type="text" @click="goToCollection">Enter</el-button>
+          <el-button type="text" @click="toggleSettings">Settings</el-button>
           <el-button type="text" @click="showExitModal">Exit</el-button>
         </div>
       </el-col>
@@ -86,8 +90,8 @@ const typeText = () => {
       <el-col :span="12" class="bottom">
         <p>Contact</p>
         <p><b>Email:</b>Eradonng@gmail.com</p>
-        <p><b>IG:</b>xiaoyangyu_</p>
         <p><b>BiliBili:</b>LumineCommunity</p>
+        <p><b>IG:</b>xiaoyangyu_</p>
       </el-col>
     </el-row>
 
@@ -96,9 +100,15 @@ const typeText = () => {
         <p>{{ modalText }}</p>
       </div>
     </div>
+
+    <div v-if="showSettings" class="settings-panel">
+      <div class="settings-content">
+        <img src="https://github.com/eraDong/picx-images-hosting/raw/master/f3872bb819abb5ffd4ea7f747c31c23a.70a7dvkdu8.jpg" alt="Settings Image" />
+        <p>yztw</p>
+      </div>
+    </div>
   </div>
 </template>
-
 
 <style lang="less" scoped>
 .main {
@@ -107,7 +117,7 @@ const typeText = () => {
   min-height: 100vh;
   padding: 45px;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 20px;
 
   .content {
     display: flex;
@@ -217,15 +227,12 @@ const typeText = () => {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    
 
     .modal-content {
       margin: 0 auto;
       vertical-align:center;
-
       background: url(@/assets/pixel-chat.png) no-repeat center center;
       background-size: 250px;
-
       line-height: 50px;
       color: #000000;
       padding: 20px;
@@ -235,6 +242,64 @@ const typeText = () => {
       max-width: 500px;
       width: 100%;
       height: 100px;
+    }
+  }
+
+  .settings-panel {
+    position: fixed;
+    top: 50%;
+    right: 20%;
+    width: 300px;
+    height: auto;
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    .settings-content {
+      text-align: center;
+      img {
+        padding: 15px;
+        width: 80%;
+
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .settings-panel {
+      width: 300px;
+      height: auto;
+      left: -23%;
+      transform: translateX(50%) translateY(100%);
+      top: 10%;
+
+      border-top: 2px solid #cccccc;
+
+      &.active {
+        transform: translateX(50%) translateY(-50%);
+      }
+
+      .settings-content {
+        img {
+          width: 50%;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 }
