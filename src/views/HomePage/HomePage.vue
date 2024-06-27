@@ -39,10 +39,15 @@ const typeText = () => {
 const toggleSettings = () => {
   showSettings.value = !showSettings.value
 }
+
+const globalToggleSettings = () => {
+  if(showSettings.value == true)showSettings.value=false
+}
+
 </script>
 
 <template>
-  <div class="main">
+  <div class="main" @click="globalToggleSettings()">
     <el-row>
       <el-col :span="20" :xs="16">
         <el-row class="content" justify="start">
@@ -76,7 +81,7 @@ const toggleSettings = () => {
         <img src="@/assets/angel_wings_black.png" alt="" />
         <div class="enter">
           <el-button type="text" @click="goToCollection">Enter</el-button>
-          <el-button type="text" @click="toggleSettings">Settings</el-button>
+          <el-button type="text" @click.stop="toggleSettings">Settings</el-button>
           <el-button type="text" @click="showExitModal">Exit</el-button>
         </div>
       </el-col>
@@ -103,11 +108,20 @@ const toggleSettings = () => {
 
     <div v-if="showSettings" class="settings-panel">
       <div class="settings-content">
-        <img src="https://github.com/eraDong/picx-images-hosting/raw/master/f3872bb819abb5ffd4ea7f747c31c23a.70a7dvkdu8.jpg" alt="Settings Image" />
-        <p>yztw</p>
+        <img src="https://wdcdn.qpic.cn/MTMxMDI2NjIyMDkzMDk0ODQ_777089_N3dFl13nPfCcGYFd_1719457223" alt="Settings Image" />
+        <p>xiaoyangyu</p>
       </div>
     </div>
+
+
+    <div class="bottom-line">
+    <!-- 线条 -->
+    </div>
+
   </div>
+
+
+
 </template>
 
 <style lang="less" scoped>
@@ -118,6 +132,7 @@ const toggleSettings = () => {
   padding: 45px;
   overflow: hidden;
   font-size: 20px;
+  
 
   .content {
     display: flex;
@@ -161,11 +176,11 @@ const toggleSettings = () => {
   .logo {
     margin-top: 135px;
     text-align: center;
-
+    z-index: 100;
     img {
-      margin: 10px;
+      margin: 20px;
       width: 100%;
-      max-width: 125px;
+      max-width: 225px;
       height: auto;
       background: linear-gradient(to bottom right, #ffffff, #929090f6);
       box-shadow: 0 4px 10px rgba(48, 65, 52, 0.425);
@@ -302,5 +317,18 @@ const toggleSettings = () => {
       }
     }
   }
+  .bottom-line {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    border-top: 30px dashed #4444441f; /* 线条宽度、样式和颜色 */
+    width: 100%; /* 线条宽度 */
+    z-index: 1;
+  }
+
+
+
 }
 </style>

@@ -10,7 +10,7 @@
           <div class="card-stack" v-if="!isCarousel" @click="spreadCards">
             <transition-group name="card" tag="div" class="cards">
               <div
-                v-for="(card, index) in cards.slice(0, 4)"
+                v-for="(card, index) in cards.slice(cards.length<4?0:cards.length-4, cards.length)"
                 :key="card.id"
                 class="card"
                 :style="getCardStyle(index)"
@@ -54,12 +54,10 @@
   import { ref } from 'vue';
   
   const cards = ref([
-    { id: 1, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/面包T-图片版.8vms6gv0ko.webp', description: 'This is my first T-shirt design.' },
-    { id: 2, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/oc.92q01wcgm1.webp', description: 'I was trying to draw something-1' },
-    { id: 3, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/士兵oc.70a7duds5d.webp', description: 'I was trying to draw something-2' },
-    { id: 4, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/怪核3.1vyiokdntl.webp', description: 'Weirdcore bundle-1' },
-    { id: 5, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/怪核2.45jtnu84p.webp', description: 'Weirdcore bundle-2' },
-    { id: 6, image: 'https://github.com/eraDong/picx-images-hosting/raw/master/怪核1.4uass2lflp.webp', description: 'Weirdcore bundle-3' },
+    { id: 1, image: 'https://wdcdn.qpic.cn/MTMxMDI2NjIyMDkzMDk0ODQ_45012_GOEPRMNf7he6pGX9_1719457374', description: 'This is my first T-shirt design.' },
+    { id: 2, image: 'https://wdcdn.qpic.cn/MTMxMDI2NjIyMDkzMDk0ODQ_249830_gs2ylAQWYnOA3mZI_1719457404', description: 'I was trying to draw something-1' },
+    { id: 3, image: 'https://wdcdn.qpic.cn/MTMxMDI2NjIyMDkzMDk0ODQ_490844_LrdSACva4jGpcxq9_1719457411', description: 'I was trying to draw something-2' },
+
   ]);
   
   const isCarousel = ref(false);
@@ -68,7 +66,7 @@
   const dragging = ref(false);
   
   const getCardStyle = (index) => {
-    const totalCards = 4;
+    const totalCards = cards.value.length<4?cards.value.length:4;
     const angle = (index - totalCards / 2) * 10; // 调整展开角度
     const translation = (index - totalCards / 2) * 45; // 调整展开距离
     return {
@@ -116,17 +114,33 @@
   
   
 
-  <style scoped>
+  <style scoped lang="less">
   .main {
+    touch-action: pan-y;
+    background: linear-gradient(rgba(78, 62, 62, 0.5), rgba(255, 255, 255, 0.5)),url(@/assets/collection_bg.jpg) ;
+    
     background-color: #fff9f9;
     background-size: cover;
     min-height: 100vh;
     padding: 45px;
     overflow: hidden;
     font-size: 20px;
+    box-shadow: 0 4px 10px rgba(3, 3, 3, 0.719);
+
+
 
     .header {
-      text-align:center
+      
+      text-align:center;
+      margin-bottom: 30px;
+      h1 {
+        color: #13ff26 !important;
+        text-shadow: 2px 2px 1px #333
+      }
+      p {
+        color: #13ff26 !important;
+        text-shadow: 2px 2px 1px #333
+      }
     }
   }
   
@@ -164,7 +178,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 15px; /* 根据需要调整 */
-    box-shadow: 0 4px 8px rgba(26, 23, 23, 0.418);
+    box-shadow: 0 4px 10px rgba(3, 3, 3, 0.719);
   }
   
   .carousel {
@@ -173,13 +187,13 @@
     align-items: center;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: auto;
   }
   
   .carousel-container {
     display: flex;
     justify-content: space-around;
-    height: 100%;
+    height: auto;
     cursor: grab;
     user-select: none;
     padding: 0 10px; /* If necessary, adjust padding */
@@ -191,14 +205,14 @@
 
     .carousel-card {
       margin-right: -150px;
-      min-width: 25%;
-      height: 550px;
+      max-width: 100%;
+      max-height: 550px;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.01s ease;
 
       img {
         width: 100%; /* 根据需要调整 */
-        height: auto;
+        height: 250px;
         object-fit: cover;
         margin: 0 auto;
         border-radius: 15px; /* 根据需要调整 */
@@ -209,6 +223,8 @@
     .card-description {
       margin-top: 20px;
       font-size: 16px; /* 根据需要调整 */
+      color: #13ff26 !important;
+      text-shadow: 2px 2px 1px #333
     }
 
   }

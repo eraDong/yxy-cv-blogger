@@ -2,7 +2,7 @@
 <template>
   <div class="main">products developing</div>
 </template>
-<style scoped>
+<style scoped lang="less">
 .main {
   background-color: #fff9f9;
   background-size: cover;
