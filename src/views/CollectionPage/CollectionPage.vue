@@ -6,7 +6,13 @@
           <h1>Collections</h1>
           <p>All my works are selected here</p>
           <!-- <p>total: {{ cards.length }}</p> -->
-        </div>
+          </div>
+          <div :span="24" class="bottom">
+            <div class="marquee">
+              <div class="line">{{ bottom_line_text }}</div>
+              <div class="line">{{ bottom_line_text }}</div>
+            </div>
+          </div>
           <div class="card-stack" v-if="!isCarousel" @click="spreadCards">
             <transition-group name="card" tag="div" class="cards">
               <div
@@ -42,6 +48,7 @@
             </div>
           </div>
         </el-col>
+
       </el-row>
     </div>
   </template>
@@ -52,6 +59,8 @@
   
   <script setup>
   import { ref } from 'vue';
+
+  const bottom_line_text = "44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444"
   
   const cards = ref([
     { id: 1, image: 'https://wdcdn.qpic.cn/MTMxMDI2NjIyMDkzMDk0ODQ_45012_GOEPRMNf7he6pGX9_1719457374', description: 'This is my first T-shirt design.' },
@@ -116,8 +125,10 @@
 
   <style scoped lang="less">
   .main {
+    
     touch-action: pan-y;
-    background: linear-gradient(rgba(78, 62, 62, 0.5), rgba(255, 255, 255, 0.5)),url(@/assets/collection_bg.jpg) ;
+  
+
     
     background-color: #fff9f9;
     background-size: cover;
@@ -132,14 +143,14 @@
     .header {
       
       text-align:center;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       h1 {
-        color: #13ff26 !important;
-        text-shadow: 2px 2px 1px #333
+       
+        text-shadow: 2px 2px 1px #fdfdfdc4
       }
       p {
-        color: #13ff26 !important;
-        text-shadow: 2px 2px 1px #333
+       
+        text-shadow: 2px 2px 1px #fdfdfdc4
       }
     }
   }
@@ -150,7 +161,7 @@
     align-items: center;
     position: relative;
     margin: 0 auto;
-    height: 230px; /* 根据需要调整 */
+    height: 273px; /* 根据需要调整 */
     width: 280px;
   }
   
@@ -162,24 +173,29 @@
   
   .card {
     position: absolute;
+    
     width: 100px; /* 根据需要调整 */
     height: 190px; /* 根据需要调整 */
     transition: transform 0.5s ease, z-index 0.5s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.2) !important; /* 放大比例 */
-    z-index: 10 !important; /* 提高层级 */
-    cursor: pointer;
-  }
-  
-  .card img {
+    img {
+    padding: 10px;
+    padding-bottom: 30px;
+    background-color: #ebe8e8;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px; /* 根据需要调整 */
-    box-shadow: 0 4px 10px rgba(3, 3, 3, 0.719);
+    box-shadow: 0 4px 10px rgba(29, 29, 29, 0.719);
   }
+  &:hover {
+    transform: scale(1.2) !important; /* 放大比例 */
+    z-index: 10 !important; /* 提高层级 */
+    cursor: pointer;
+  }
+  }
+  
+
+
   
   .carousel {
     display: flex;
@@ -212,7 +228,7 @@
 
       img {
         width: 100%; /* 根据需要调整 */
-        height: 250px;
+        height: 230px;
         object-fit: cover;
         margin: 0 auto;
         border-radius: 15px; /* 根据需要调整 */
@@ -223,11 +239,48 @@
     .card-description {
       margin-top: 20px;
       font-size: 16px; /* 根据需要调整 */
-      color: #13ff26 !important;
-      text-shadow: 2px 2px 1px #333
+
+      text-shadow: 2px 2px 1px #d1d1d1c4
     }
 
   }
+
+  @keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.bottom {
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  .marquee {
+    height: 100%;
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+
+    .line {
+      font-size: 30px;
+      color: #fff9f9;
+      height: 30px;
+      background-color: rgb(0, 0, 0);
+      text-align: center;
+      line-height: 34px;
+      padding-right: 100%;
+      
+    }
+  }
+
+
+
+
+}
 
 
 

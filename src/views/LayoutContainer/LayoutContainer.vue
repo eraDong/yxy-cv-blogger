@@ -7,10 +7,8 @@
         <img src="@/assets/nav-header.png" alt="">
         <img src="@/assets/nav-header.png" alt="">
         <img src="@/assets/nav-header.png" alt="">
-        <img src="@/assets/nav-header.png" alt="">
-        <img src="@/assets/nav-header.png" alt="">
-        <img src="@/assets/nav-header.png" alt="">
-        <img src="@/assets/nav-header.png" alt="">
+
+
       </div>
         <div class="jmp">
         <router-link to="/" class="preview-link" >Back 2 Heaven</router-link>
@@ -50,6 +48,7 @@ onMounted(() => {})
 <style scoped lang="less">
 .main {
   
+  
   background-color: #fff9f9;
   font-size: 20px;
   overflow: hidden;
@@ -63,7 +62,7 @@ onMounted(() => {})
     display: flex;
     .content {
       display: flex;
-      width:100%;
+      width:60%;
       img {
         width: 20%;
       }
